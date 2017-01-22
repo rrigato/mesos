@@ -25,3 +25,20 @@ sudo apt-get install -y openjdk-8-jdk
 
 sudo apt-get -y install build-essential python-dev libcurl4-nss-dev libsasl2-dev libsasl2-modules maven libapr1-dev libsvn-dev zlib1g-dev
 
+
+#Building mesos
+cd mesos-1.1.0
+
+
+#the build and configuration will take a while
+mkdir build
+
+../configure
+make
+
+#run the test to make sure it is installed
+make test
+#make install
+
+#starting the mesos master
+./bin/mesos-master.sh --ip=127.0.0.1 --work_dir=/var/lib/mesos
