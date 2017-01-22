@@ -30,9 +30,15 @@ sudo apt-get -y install build-essential python-dev libcurl4-nss-dev libsasl2-dev
 cd mesos-1.1.0
 
 
+
 #the build and configuration will take a while
 mkdir build
 
+#############################################################
+#Make sure to run the following commands from the build directory
+#
+#
+################################################################
 ../configure
 make
 
@@ -42,3 +48,6 @@ make test
 
 #starting the mesos master
 ./bin/mesos-master.sh --ip=127.0.0.1 --work_dir=/var/lib/mesos
+
+#starting the mesos agent
+./bin/mesos-agent.sh --master=127.0.0.1:5050 --work_dir=/var/lib/mesos
