@@ -39,15 +39,28 @@ mkdir build
 #
 #
 ################################################################
-../configure
-make
+sudo ../configure
+sudo make
 
 #run the test to make sure it is installed
-make test
+sudo make test
 #make install
 
+#make sure to run with sudo privledges
 #starting the mesos master
-./bin/mesos-master.sh --ip=127.0.0.1 --work_dir=/var/lib/mesos
+sudo ./bin/mesos-master.sh --ip=127.0.0.1 --work_dir=/var/lib/mesos
 
 #starting the mesos agent
-./bin/mesos-agent.sh --master=127.0.0.1:5050 --work_dir=/var/lib/mesos
+sudo ./bin/mesos-agent.sh --master=127.0.0.1:5050 --work_dir=/var/lib/mesos
+
+
+
+#run a c++ framework
+sudo ./src/test-framework --master=127.0.0.1:5050
+
+
+#java framework
+sudo ./src/examples/java/test-framework 127.0.0.1:5050
+
+#python framework
+sudo ./src/examples/python/test-framework 127.0.0.1:5050
