@@ -29,3 +29,20 @@ Simply type
 http://<your ipv4>:5050  
 ```
 on any browser for a computer connected to your lan and you should be able to see cluster information
+
+
+
+###Adding agent nodes 
+Adding agent nodes is relatively straight forward, simply include the master ipv4 address
+
+```
+#cd to the build directory of your Mesos cluster
+sudo ./bin/mesos-agent.sh --master=<master ipv4>:<master port> --port=<port yout  want for agent> --work_dir=/var/lib/mesos
+```
+
+To check that it worked, go to http://<master ipv4>:<master port>
+and the resources associated with the new agent should now be present
+
+
+
+
