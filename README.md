@@ -1,4 +1,4 @@
-###How to view a Mesos from a node via LAN
+###How to view a Mesos cluster from a node via LAN
 
 #####First setup up the master node
 
@@ -12,7 +12,7 @@ We can use the above ipv4 to setup the apache mesos master
 #change directory to where apache mesos was built
 cd ~Documents/Mesos/mesos-1.1.0/build
   
-sudo ./bin/mesos-master.sh --ip=<your ipv4> --work_dir=/var/lib/mesos
+sudo ./bin/mesos-master.sh --ip=< your ipv4> --work_dir=/var/lib/mesos
 ```
 Make sure to replace the above with your actual ipv4
 
@@ -45,4 +45,14 @@ and the resources associated with the new agent should now be present
 
 
 
+###Running Apache Spark using an Apache Mesos Cluster
+The first environment variable you need to set in order to run apache Spark on Mesos is the MESOS_NATIVE_JAVA_LIBRARY environemnt variable
+
+To set this variable cd to the configuration directory of the downloaded Spark cluster
+
+```
+cd ~/Documents/Spark/spark-2.1.0/conf
+```
+
+And [create a spark-env.sh file to point to the libmesos.so file]()
 
