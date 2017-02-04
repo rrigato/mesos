@@ -54,5 +54,6 @@ To set this variable cd to the configuration directory of the downloaded Spark c
 cd ~/Documents/Spark/spark-2.1.0/conf
 ```
 
-And [create a spark-env.sh file to point to the libmesos.so file]()
+And [create a spark-env.sh file to point to the libmesos.so file](https://github.com/rrigato/mesos/blob/master/spark-env.sh)
 
+Note that the file you are looking for on a MAC OS x is libmesos.dylib
